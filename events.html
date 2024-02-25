@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<style>
+    /* div {
+        width: 50px;
+        height: 5000px;
+        background-color: red;
+    } */
+</style>
+
+<body>
+    <!-- <h1>JavaScript Events</h1> -->
+
+    <!-- <div class="myDiv"></div> -->
+
+    <!-- <button>Don't press Me!</button> -->
+    <!-- <a href="http://google.com">Link to Google</a> -->
+
+    <!-- <form method="get">
+        <label>Your Name: <input type="text" name="name"></label>
+        <input type="submit">
+    </form> -->
+
+    <h1>Resize the Window and Watch the Console</h1>
+
+    <!-- <div></div> -->
+
+
+    <script>
+        /*  let btn = document.querySelector('button');
+
+
+        btn.addEventListener('click', function () {
+            alert('I told you not to press me!')
+
+        }) */
+        /* 
+                const page = ['Home', 'About', 'Contact', 'Service'];
+
+                const navUl = document.createElement('ul');
+                document.querySelector('.myDiv').appendChild(navUl);
+
+                page.forEach((page) => {
+                    const list = document.createElement('li');
+                    let link = document.createElement('a');
+                    link.setAttribute('href', '#');
+                    link.textContent = page;
+
+                    navUl.appendChild(list);
+                    list.appendChild(link);
+                }); */
+
+        /*  let btn = document.querySelector('button');
+
+         btn.addEventListener('click', function (event) {
+             event.preventDefault();
+             event.target.style.backgroundColor = "blue";
+         }) */
+
+        /*      let link = document.querySelector('a');
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            alert('Sorry, no google for you!')
+        })
+ */
+        /* 
+                let myForm = document.querySelector('form');
+
+                myForm.addEventListener('submit', function (evt) {
+                    evt.preventDefault();
+
+                    let formDate = document.querySelector('input').value;
+
+                    alert(`${formDate}`);
+
+                }); */
+
+        /*     let heading = document.querySelector('h1')
+            let roll = document.querySelector('div');
+
+            roll.addEventListener('mouseover', function () {
+                heading.innerHTML = 'The mouse is over the box';
+            });
+
+            roll.addEventListener('mouseout', function () {
+                heading.innerHTML = 'The mouse has left the box';
+            });
+
+            heading.addEventListener('mouseover', function () {
+                heading.innerHTML = 'Roll your mouse over the boxes';
+            }) */
+
+        /*   let pageTop;
+
+          window.addEventListener('scroll', function () {
+              pageTop = window.pageYOffset;
+              console.log(pageTop);
+          }); */
+        /* 
+                window.addEventListener('resize', function () {
+
+                    console.log(`The window width is ${window.innerWidth}`);
+
+                    console.log(`The window Height is ${window.innerHeight}`);
+                }); */
+        /* 
+                document.addEventListener('keydown', function (event) {
+                    alert(`A ${event.key} key was pressed `)
+                }) */
+    </script>
+</body>
+
+</html>
