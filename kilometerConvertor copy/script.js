@@ -3,9 +3,10 @@
 
     let convertType = 'mile';
 
-    const convert = document.getElementById('convert');
     const heading = document.querySelector('h1');
     const intro = document.querySelector('p');
+    const answer = document.getElementById('answer');
+    const convert = document.getElementById('convert');
 
 
     document.addEventListener('keydown', function (event) {
@@ -37,16 +38,13 @@
     });
 
 
-
     function convertDistance() {
         const distance = Number(document.getElementById('distance').value);
 
-        const answer = document.getElementById('answer');
+        const kilometer = (distance * 1.609344).toFixed(3);
+        const mile = (distance * 0.6213712).toFixed(3);
 
         if (distance) {
-
-            kilometer = (distance * 1.609344).toFixed(3);
-            mile = (distance * 0.6213712).toFixed(3);
 
             if (convertType === 'mile') {
                 answer.innerHTML = `<h2>${distance} miles convert in to ${kilometer} kilometers</h2>`
