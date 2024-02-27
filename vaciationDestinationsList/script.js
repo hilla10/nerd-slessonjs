@@ -10,23 +10,24 @@ function handleSubmitForm(event) {
     const destPhoto = event.target.elements['photo'].value;
     const destDesc = event.target.elements['description'].value;
 
-    for (i = 0; i < detailsForm.length; i++) {
-        detailsForm.elements[i].value = '';
-    };
-
     let destCard = createDestinationCard(destName, destLocation, destPhoto, destDesc);
 
+    for (i = 0; i < detailsForm.length; i++) {
+        detailsForm.elements[i].value = '';
+    }
 
-    let wishListContainer = document.getElementById('destinations_container');
+    let wishListContainer = document.querySelector('#destinations_container');
 
     if (wishListContainer.children.length === 0) {
         document.getElementById('title').innerHTML = 'My wish list';
     };
 
-    document.querySelector('#destinations_container').appendChild(destCard);
-};
+    document.getElementById('destinations_container').appendChild(destCard);
+
+}
 
 function createDestinationCard(name, location, photoURL, description) {
+
     let card = document.createElement('div');
     card.className = 'card';
 
@@ -50,7 +51,6 @@ function createDestinationCard(name, location, photoURL, description) {
     cardTitle.innerText = name;
     cardBody.appendChild(cardTitle);
 
-
     let cardSubTitle = document.createElement('h4');
     cardSubTitle.innerText = location;
     cardBody.appendChild(cardSubTitle);
@@ -59,20 +59,18 @@ function createDestinationCard(name, location, photoURL, description) {
 
     if (description.length !== 0) {
         let cardText = document.createElement('p');
-        cardText.classList = 'card-text';
+        cardText.className = 'card-text';
         cardText.innerText = description;
         cardBody.appendChild(cardText);
     }
 
-
     let cardDeleteBtn = document.createElement('button');
     cardDeleteBtn.innerText = 'Remove';
-
+    
     cardDeleteBtn.addEventListener('click', removeDestination);
     cardBody.appendChild(cardDeleteBtn);
 
     card.appendChild(cardBody);
-
     return card;
 
 };
