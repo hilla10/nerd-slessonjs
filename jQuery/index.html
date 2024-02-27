@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing JQuery</title>
+</head>
+
+<body>
+    <h1 id="main">Is JQuery Working</h1>
+    <p>Here is a paragraph</p>
+    <p>Here is a second paragraph</p>
+    <p>Here is a another paragraph</p>
+
+    <ul class="special">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+
+    </ul>
+
+    <p class="special">Lorem ipsum dolor sit amet consectetur adipisicing elit. A beatae labore itaque reprehenderit
+        provident dolorum doloribus fuga maiores ex commodi!</p>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        // $('li').css('border', '2px solid red');
+
+        $('a').click(function () {
+            console.log(this.innerHTML);
+        });
+    </script>
+</body>
+
+</html>
