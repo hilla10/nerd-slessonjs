@@ -1,34 +1,32 @@
-let subMenus = document.querySelectorAll('ul li ul');
+(function () {
 
-function hideSubMenu() {
-    
-    for(let i = 0; i < subMenus.length; i++) {
-        subMenus[i].className = 'hide-menu';
+    'use strict';
+
+    const subMenu = document.querySelectorAll('ul li ul');
+
+    function hideSubMenu() {
+        for (let i = 0; i < subMenu.length; i++) {
+            subMenu[i].className = 'hide-menu'
+        };
     }
-}
 
-hideSubMenu();
+    hideSubMenu();
 
-let menuLink = document.querySelectorAll('.menuLink');
+    const menuLink = document.querySelectorAll('.menuLink');
 
-for(let i = 0; i< menuLink.length; i++) {
-    menuLink[i].addEventListener('click', function(event) {
-        event.preventDefault();
+    for (let i = 0; i < menuLink.length; i++) {
 
-        let thisMenu = this.parentNode.querySelector('ul');
-        
-        if(thisMenu.classList.contains('hide-menu')) {
-            hideSubMenu();
+        menuLink[i].addEventListener('click', function (event) {
+            event.preventDefault();
 
-            thisMenu.className = 'show-menu';
-        } else {
-            thisMenu.className = 'hide-menu';
-        }
+            let thisMenu = this.parentNode.querySelector('ul');
 
-    });
-};
-
-// subMenus
-// menuLink
-// 
-// thisMenu
+            if (thisMenu.classList.contains('hide-menu')) {
+                hideSubMenu();
+                thisMenu.className = 'show-menu';
+            } else {
+                thisMenu.className = 'hide-menu';
+            }
+        })
+    }
+})();
