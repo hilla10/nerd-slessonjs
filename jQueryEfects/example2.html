@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>jQuery animation</title>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#" id="slideUpBox">slideUp</a>
+                <a href="#" id="slideDownBox">slideDown</a>
+                <a href="#" id="slideToggleBox">slideToggle</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="box"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <script>
+        $('#slideUpBox').click(function () {
+            $('#box').slideUp(500);
+        })
+        $('#slideDownBox').click(function () {
+            $('#box').slideDown(500);
+        });
+        $('#slideToggleBox').click(function () {
+            $('#box').slideToggle(500, 'easeInOutCirc', function() {
+                alert('done')
+            });
+        });
+    </script>
+</body>
+
+</html>

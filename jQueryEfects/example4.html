@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>jQuery animation</title>
+
+ 
+</head>
+
+<body>
+<h1>animate</h1>
+    <nav>
+        <ul>
+            <li>
+                <a href="#" id="growBox">Grow Box</a>
+                <a href="#" id="growText">Grow Text</a>
+                <a href="#" id="moveBox">Move Box</a>
+                <a href="#" id="doAll">Do all</a>
+                <a href="#" id="sequence">Sequence</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="box">Chickens and lamas</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <script>
+        
+        $('#growBox').click(function() {
+            $('#box').animate({width: '650px'});
+        });
+
+        $('#growText').click(function() {
+            $('#box').animate({fontSize: '2.2rem'})
+        });
+        
+        $('#moveBox').click(function() {
+            $('#box').animate({left: '+=160px'}, 500)
+        });
+
+        $('#doAll').click(function() {
+            $('#box').animate({width: '650px', fontSize: '2.2rem', left: '+=100px'})
+        });
+
+        $('#sequence').click(function() {
+            $('#box').animate({width: '650px'}, 1500, function() {
+                $('#box').animate({fontSize: '2.2rem'}, 1500, function() {
+                    $('#box').animate({left: '+=160px'}, 1500)
+                });
+            });
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>jQuery animation</title>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#" id="hideBox">hide</a>
+                <a href="#" id="showBox">show</a>
+                <a href="#" id="toggleBox">toggle</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="box"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $('#hideBox').click(function () {
+            $('#box').hide(500);
+        });
+
+        $('#showBox').click(function () {
+            $('#box').show(500);
+        });
+
+        $('#toggleBox').click(function () {
+            $('#box').toggle(500, function() {
+                alert('done')
+            });
+        })
+    </script>
+</body>
+
+</html>

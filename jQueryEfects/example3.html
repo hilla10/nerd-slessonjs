@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>jQuery animation</title>
+
+    <style>
+        #box {
+            width: 600px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="#" id="fadeOutBox">FADE OUT</a>
+                <a href="#" id="fadeInBox">FADE IN</a>
+                <a href="#" id="fadeTo20Box">FADE TO 20%</a>
+                <a href="#" id="fadeTo100Box">FADE TO 100%</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="box"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+    <script>
+        $('#fadeOutBox').click(function () {
+            $('#box').fadeOut(500);
+        });
+        $('#fadeInBox').click(function () {
+            $('#box').fadeIn(500, 'easeInOutCirc');
+        });
+        $('#fadeTo20Box').click(function() {
+            $('#box').fadeTo(300, 0.2);
+        });
+
+        $('#fadeTo100Box').click(function() {
+            $('#box').fadeTo(300, 1)
+        });
+    </script>
+</body>
+
+</html>
