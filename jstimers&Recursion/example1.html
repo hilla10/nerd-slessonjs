@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timers & recursion</title>
+</head>
+<body>
+    <p><a href="#" id="stop">Stop the script</a></p>
+    <div id="theDiv">Default content</div>
+
+    <script>
+        let theDiv = document.querySelector('#theDiv');
+        let content = `<p>adding another paragraph</p>`;
+        let timer = setInterval(function () {
+        theDiv.innerHTML += content;
+        }, 500);
+
+        document.querySelector('#stop').addEventListener('click', function () {
+        clearInterval(timer);
+        })
+    </script>
+</body>
+</html>
