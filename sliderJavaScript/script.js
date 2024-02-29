@@ -3,15 +3,15 @@ window.addEventListener('load', function () {
     const slideCount = document.querySelectorAll('#slider-wrapper ul li').length;
 
     // How wid is each slide?
-    const slideWith = this.document.querySelector('#slider-wrapper').offsetWidth;
+    const slideWidth = document.querySelector('#slider-wrapper').offsetWidth;
 
     // Total slider width?
-    const totalWidth = `${slideCount * slideWith}px`;
+    const totalWidth = `${slideCount * slideWidth}px`;
 
     // Dom element
-    const slider = this.document.querySelector('#slider-wrapper ul');
-    const next = this.document.querySelector('#next');
-    const previous = this.document.querySelector('#previous');
+    const slider = document.querySelector('#slider-wrapper ul');
+    const next = document.querySelector('#next');
+    const previous = document.querySelector('#previous');
 
     // Upper left corner of slider
     let leftPosition = 0;
@@ -30,7 +30,7 @@ window.addEventListener('load', function () {
             counter = 0;
         }
         // move the slider to the next slide.
-        leftPosition = `-${counter * slideWith}px`;
+        leftPosition = `-${counter * slideWidth}px`;
         slider.style.left = leftPosition;
     });
 
@@ -41,9 +41,33 @@ window.addEventListener('load', function () {
         if (counter < 0) {
             counter = slideCount - 1;
         }
-        leftPosition = `-${counter * slideWith}px`;
+        leftPosition = `-${counter * slideWidth}px`;
         slider.style.left = leftPosition;
+    });
+
+    // Auto Play
+
+
+    let stopStartSlider = setInterval(slides, 3000)
+
+    const sliderWrapper = document.querySelector('#slider-wrapper');
+
+    sliderWrapper.addEventListener('mouseover', function () {
+        clearInterval(stopStartSlider);
     })
 
+    sliderWrapper.addEventListener('mouseout', function () {
+        stopStartSlider = setInterval(slides, 3000);
+    })
+
+
+    function slides() {
+        counter++;
+        if (counter === slideCount) {
+            counter = 0;
+        }
+        leftPosition = `-${counter * slideWidth}px`;
+        slider.style.left = leftPosition;
+    }
 
 });
