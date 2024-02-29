@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timers & recursion</title>
-    
+
     <style>
         .one {
             width: 100px;
             height: 100px;
             background: #910814;
-            transition: all 2s;;
+            transition: all 2s;
+            ;
         }
 
         .two {
@@ -24,12 +25,12 @@
 </head>
 
 <body>
-  <div id="theDiv" class="one"></div>
+    <div id="theDiv" class="one"></div>
     <script>
-     let theDiv = document.querySelector('#theDiv');
-     setTimeout(function () {
-        theDiv.setAttribute('class', 'two');
-     }, 2000)
+        let theDiv = document.querySelector('#theDiv');
+        setTimeout(function () {
+            theDiv.setAttribute('class', 'two');
+        }, 2000)
     </script>
 </body>
 
