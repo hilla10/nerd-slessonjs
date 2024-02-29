@@ -19,7 +19,7 @@
             currentImage = 0;
         }
 
-        slider();
+        updateSlider();
     });
 
 
@@ -31,10 +31,10 @@
             currentImage = slideImage.length - 1;
         }
 
-        slider();
+        updateSlider();
     });
 
-    function slider() {
+    function updateSlider() {
 
 
         const newSlide = document.createElement('img');
@@ -47,5 +47,25 @@
         }
     }
 
+
+    let stopStartSlider = setInterval(slider, 3000);
+
+    container.addEventListener('mouseover', function () {
+        clearInterval(stopStartSlider);
+    })
+
+    container.addEventListener('mouseout', function () {
+        stopStartSlider = setInterval(slider, 3000)
+    })
+
+    function slider() {
+        currentImage++;
+
+        if (currentImage > slideImage.length - 1) {
+            currentImage = 0;
+        }
+
+        updateSlider();
+    }
 
 }());
